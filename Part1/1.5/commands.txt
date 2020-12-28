@@ -1,0 +1,3 @@
+$ docker run -d -it --name reader ubuntu  sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+$ docker exec -it reader bash
+root@b4179a2baa0d:/# apt update && apt install curl -y
