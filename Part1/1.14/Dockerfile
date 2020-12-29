@@ -1,16 +1,16 @@
-FROM ubuntu:16.04
+FROM ruby:2.6
 
+WORKDIR /project
 
 RUN apt-get update && apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt-get install -y nodejs
 
-WORKDIR /mydir
-COPY ./frontend-example-docker .
+COPY ./rails-example-project .
 
-RUN npm install
+RUN bundle install
+RUN rails db:migrate
 
-EXPOSE 5000
+EXPOSE 3000
 
-CMD ["npm", "start"]
-
+CMD ["rails", "s"]

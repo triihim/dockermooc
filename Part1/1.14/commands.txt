@@ -1,0 +1,8 @@
+EDITS MADE:
+Changed the example project's Gemfile's ruby version to 2.6.6
+because there was no tag for 2.6.0 and the application would not
+run with ruby:2.6
+
+Commands:
+$ docker build -t ruby-project .
+$ docker run -d -p 3000:3000 ruby-project

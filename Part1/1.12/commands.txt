@@ -1,0 +1,9 @@
+Inside backend folder:
+$ docker build -t backend .
+
+Inside frontend folder:
+$ docker build -t frontend .
+
+Starting the containers:
+$ docker run -d -p 80:5000 frontend
+$ docker run -d -p 8000:8000 backend

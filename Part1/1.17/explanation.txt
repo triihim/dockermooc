@@ -1,0 +1,5 @@
+This is a simple Node development environment
+containing Nodejs and npm.
+
+Available at:
+https://hub.docker.com/repository/docker/triihim/nodedevenv

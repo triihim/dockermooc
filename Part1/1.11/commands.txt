@@ -1,0 +1,2 @@
+$ docker build -t webapp-backend .
+$ docker run -v "$(pwd)/logs.txt:/mydir/logs.txt" -it -p 8000:8000 webapp-backend
