@@ -1,0 +1,1 @@
+Changed environment variable API_URL of the frontend to /api to make all the buttons work correctly with nginx
