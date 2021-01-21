@@ -1,0 +1,7 @@
+Initially when FROM ubuntu:16.04
+-Frontend: 494mb
+-Backend: 299mb
+
+After changing FROM to node:alpine
+-Frontend: 328mb
+-Backend: 129mb

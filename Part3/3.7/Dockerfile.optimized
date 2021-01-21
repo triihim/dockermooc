@@ -1,0 +1,27 @@
+# This is a docker file of ml-kurkkumopo-frontend example.
+# Optimization brought the image size down to 118mb from the original 1.11gb.
+
+FROM node:15.5.1-alpine3.10 as build-stage
+
+WORKDIR /usr/src/app
+COPY ./ml-kurkkumopo-frontend .
+
+RUN npm ci && \
+    npm run build
+
+
+FROM node:15.5.1-alpine3.10
+
+WORKDIR /usr/src/app
+
+RUN npm install -g serve && \
+    adduser -D app && \
+    chown -R app /usr/src/app
+
+USER app
+
+COPY --from=build-stage /usr/src/app/build /usr/src/app/build
+
+EXPOSE 3000
+
+CMD ["serve", "-s", "-l", "3000", "build"]

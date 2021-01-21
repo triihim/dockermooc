@@ -1,0 +1,7 @@
+Initial sizes:
+frontend: 526mb
+backend: 331mb
+
+After optimizations:
+frontend: 493mb
+backend: 298mb
